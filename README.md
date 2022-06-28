@@ -1,3 +1,14 @@
+# Description
+
+This is an application that searches for images within the public Flickr API
+
+# Nexts Steps
+
+    - Pagination
+    - Add Theme
+    - Add info images with Modal (Portal)
+    ...
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
