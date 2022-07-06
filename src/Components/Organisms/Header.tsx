@@ -1,14 +1,8 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import useConfigContext from "../../Hooks/use-config-context";
-import useTranslateContext from "../../Hooks/use-translate-context";
-import Button from "../Atoms/Button";
-import { InputText } from "../Atoms/InputText";
-import Language from "../Atoms/Language";
-import LinkStyled from "../Atoms/Link";
-import { Div } from "../Layout/styles";
-import ListOfButtons from "../Molecules/ListOfButtons";
+import { useTranslateContext } from "Hooks";
+import { Button, InputText, Language, LinkStyled, ListOfButtons, Div } from "Components";
 
 const Form = styled.form`
   width: 100%;
@@ -26,7 +20,7 @@ const SpanLanguage = styled.span`
   top: 10px;
 `;
 
-export default function Header(): React.ReactElement {
+export function Header(): React.ReactElement {
   let navigate = useNavigate();
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -41,7 +35,12 @@ export default function Header(): React.ReactElement {
     navigate(`/search/${buttonText}`);
   };
 
-  const { title, search, searchPlaceholder, defaultButtons } = useTranslateContext();
+  const {
+    title,
+    search,
+    searchPlaceholder,
+    defaultButtons,
+  } = useTranslateContext();
 
   return (
     <>

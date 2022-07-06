@@ -1,7 +1,6 @@
-import Button from "../Atoms/Button";
-import { Flex } from "../Layout/styles";
+import { Button, Flex } from "Components";
 
-export default function ListOfButtons({
+export function ListOfButtons({
   buttonsText,
   handleButton,
 }: {

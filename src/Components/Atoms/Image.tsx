@@ -1,4 +1,4 @@
-export default function Image({
+export function Image({
   url,
   title,
 }: {
@@ -7,7 +7,7 @@ export default function Image({
 }): React.ReactElement {
   return (
     <div className="image">
-      <img src={url} alt={title} />
+      <img src={url} alt={title} loading="lazy" />
       <h3>{title}</h3>
     </div>
   );

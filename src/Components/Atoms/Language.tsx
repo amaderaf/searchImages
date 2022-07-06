@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useChangeTranslateContext } from "../../Hooks/use-translate-context";
+import { useChangeTranslateContext } from "Hooks";
 
 const  ButtonLang = styled.button`
   background-color: transparent;
@@ -8,7 +8,7 @@ const  ButtonLang = styled.button`
   cursor: pointer;
 `;
 
-export default function Language(): React.ReactElement {
+export function Language(): React.ReactElement {
 
   const setLang = useChangeTranslateContext();
 

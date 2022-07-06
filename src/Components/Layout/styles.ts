@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 type SpaceProps = {
     p?: string;
     px?: string;

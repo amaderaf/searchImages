@@ -30,7 +30,7 @@ const textsLang: Record<string, Language> = {
   },
 };
 
-const TranslateContext = createContext({
+export const TranslateContext = createContext({
   texts: textsLang.Sp,
   setLang: (lang: string) => {},
 });
@@ -52,5 +52,3 @@ export const TranslateContextProvider = ({
     </TranslateContext.Provider>
   );
 };
-
-export default TranslateContext;

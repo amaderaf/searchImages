@@ -1,12 +1,10 @@
 import { useContext } from "react";
-import TranslateContext from "../Context/TranslateContext";
+import { TranslateContext } from "Context";
 
-const useTranslateContext = () => {
+export const useTranslateContext = () => {
   return useContext(TranslateContext).texts;
 };
 
 export const useChangeTranslateContext = () => {
   return useContext(TranslateContext).setLang;
 };
-
-export default useTranslateContext;

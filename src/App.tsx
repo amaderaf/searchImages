@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom"
-import Header from "./Components/Organisms/Header"
-import { Div } from "./Components/Layout/styles"
-import Home from "./Pages/Home"
-import ResultImages from "./Pages/ResultImages"
+import { Div, Header } from "Components"
+import { Home, ResultImages } from "Pages"
 
 
 function App(): React.ReactElement {

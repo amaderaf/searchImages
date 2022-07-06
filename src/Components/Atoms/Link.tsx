@@ -6,6 +6,6 @@ const LinkStyledComp = styled(Link)`
   color: #000;
 `;
 
-export default function LinkStyled(props: LinkProps): React.ReactElement {
+export function LinkStyled(props: LinkProps): React.ReactElement {
   return <LinkStyledComp {...props}>{props.children}</LinkStyledComp>;
 }

@@ -8,7 +8,7 @@ const ButtonStyled = styled.button`
   cursor: pointer;
 `;
 
-export default function Button({
+export function Button({
   buttonText,
   handleButton,
 }: {

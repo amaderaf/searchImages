@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ConfigContext from "../Context/ConfigContext";
+import { ConfigContext } from "Context";
 
 const useConfigContext = () => {
   return useContext(ConfigContext);

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Image from "./Image";
+import { Image } from "Components";
 
 const ListOfImagesDiv = styled.div`
   display: grid;
@@ -9,7 +9,7 @@ const ListOfImagesDiv = styled.div`
   margin: 20px;
 `;
 
-export default function ListOfImages({
+export function ListOfImages({
   images,
 }: {
   images: [{ url: string; title: string }] | never[];

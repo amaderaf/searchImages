@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Loading = styled.div`
+export const Loading = styled.div`
   display: inline-block;
   width: 80px;
   height: 80px;
@@ -25,5 +25,3 @@ const Loading = styled.div`
     }
   }
 `;
-
-export default Loading;

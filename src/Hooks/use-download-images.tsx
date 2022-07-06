@@ -40,7 +40,7 @@ export function useDownloadImages({ tag }: { tag?: string }) {
     };
 
     fecthImages();
-  }, [tag]);
+  }, [tag, apiKey, perPage, urlImages]);
 
   return { images, loading };
 }

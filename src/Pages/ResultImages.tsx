@@ -1,13 +1,9 @@
 import React from "react";
-import { useDownloadImages } from "../Hooks/use-download-images";
-import ListOfImages from "../Components/Molecules/ListOfImages";
-import Loading from "../Components/Atoms/Loading";
-import NoImages from "../Components/Molecules/NoImages";
 import { useParams } from "react-router-dom";
-import { Div } from "../Components/Layout/styles";
-import useTranslateContext from "../Hooks/use-translate-context";
+import { useDownloadImages, useTranslateContext } from "Hooks";
+import { Loading, NoImages, Div, ListOfImages} from "Components";
 
-export default function ResultImages(): React.ReactElement {
+export function ResultImages(): React.ReactElement {
   const { tag } = useParams();
 
   const { images, loading } = useDownloadImages({ tag });

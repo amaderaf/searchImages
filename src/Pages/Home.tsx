@@ -1,7 +1,7 @@
 import React from "react";
-import useTranslateContext from "../Hooks/use-translate-context";
+import { useTranslateContext } from "Hooks";
 
-export default function Home(): React.ReactElement {
+export function Home(): React.ReactElement {
   const { description } = useTranslateContext();
 
   return (

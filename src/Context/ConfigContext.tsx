@@ -6,7 +6,7 @@ const valueConfigContext = {
     perPage: "24"
 }
 
-const ConfigContext = createContext(valueConfigContext);
+export const ConfigContext = createContext(valueConfigContext);
 
 export const ConfigContextProvider = ({children}: {children: React.ReactNode}): React.ReactElement => {
   return (
@@ -15,5 +15,3 @@ export const ConfigContextProvider = ({children}: {children: React.ReactNode}): 
     </ConfigContext.Provider>
   );
 };
-
-export default ConfigContext;
