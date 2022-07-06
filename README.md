@@ -4,6 +4,7 @@ This is an application that searches for images within the public Flickr API
 
 # Nexts Steps
 
+    - Testing 
     - Pagination
     - Add Theme
     - Add info images with Modal (Portal)
