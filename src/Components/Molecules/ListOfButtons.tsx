@@ -1,4 +1,4 @@
-import { Button, Flex } from "Components";
+import { Button } from "Components";
 
 export function ListOfButtons({
   buttonsText,
@@ -8,7 +8,7 @@ export function ListOfButtons({
   handleButton: (param: string) => void;
 }): React.ReactElement {
   return (
-    <Flex justify="space-between">
+    <>
       {buttonsText.map((buttonText: string) => (
         <Button
           key={buttonText}
@@ -16,6 +16,6 @@ export function ListOfButtons({
           handleButton={handleButton}
         />
       ))}
-    </Flex>
+    </>
   );
 }

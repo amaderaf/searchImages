@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom"
-import { Div, Header } from "Components"
+import { Div, Header, HotTags } from "Components"
 import { Home, ResultImages } from "Pages"
 
 
@@ -11,8 +11,10 @@ function App(): React.ReactElement {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/search/:tag" element={<ResultImages />} />
+        <Route path="/search/:tagUrl" element={<ResultImages />} />
       </Routes>
+
+      <HotTags />
     </Div>
   )
 }

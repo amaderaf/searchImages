@@ -1,12 +1,14 @@
 import React, { createContext, useState } from "react";
 
 type Language = {
-    title: string,
+    title: string
     description: string
     search: string
     searchPlaceholder: string
     resultText: string
     defaultButtons: string[]
+    viewMore: string
+    hotTags: string
 }
 
 const textsLang: Record<string, Language> = {
@@ -17,7 +19,9 @@ const textsLang: Record<string, Language> = {
     search: "Buscar",
     searchPlaceholder: "Escribe una palabra...",
     resultText: "Resultado de la busqueda de",
-    defaultButtons: ["Pajaro", "Serpiente", "Vaca", "Caballo"]
+    defaultButtons: ["Pajaro", "Serpiente", "Vaca", "Caballo"],
+    viewMore: "Ver más",
+    hotTags: "Claves mas buscadas"
   },
   En: {
     title: "Image searcher",
@@ -26,7 +30,9 @@ const textsLang: Record<string, Language> = {
     search: "Search",
     searchPlaceholder: "Type a word...",
     resultText: "Result of the search for",
-    defaultButtons: ["Bird", "Snake", "Cow", "Horse"]
+    defaultButtons: ["Bird", "Snake", "Cow", "Horse"],
+    viewMore: "View more",
+    hotTags: "Hot Tags"
   },
 };
 

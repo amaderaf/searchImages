@@ -2,7 +2,15 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useTranslateContext } from "Hooks";
-import { Button, InputText, Language, LinkStyled, ListOfButtons, Div } from "Components";
+import {
+  Button,
+  InputText,
+  Language,
+  LinkStyled,
+  ListOfButtons,
+  Div,
+  Flex,
+} from "Components";
 
 const Form = styled.form`
   width: 100%;
@@ -35,12 +43,8 @@ export function Header(): React.ReactElement {
     navigate(`/search/${buttonText}`);
   };
 
-  const {
-    title,
-    search,
-    searchPlaceholder,
-    defaultButtons,
-  } = useTranslateContext();
+  const { title, search, searchPlaceholder, defaultButtons } =
+    useTranslateContext();
 
   return (
     <>
@@ -56,10 +60,12 @@ export function Header(): React.ReactElement {
           <Button buttonText={search} />
         </Form>
 
-        <ListOfButtons
-          buttonsText={defaultButtons}
-          handleButton={handleButton}
-        />
+        <Flex justify="space-between">
+          <ListOfButtons
+            buttonsText={defaultButtons}
+            handleButton={handleButton}
+          />
+        </Flex>
       </Div>
     </>
   );

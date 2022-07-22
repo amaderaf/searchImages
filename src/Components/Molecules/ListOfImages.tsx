@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Image } from "Components";
+import { Images } from "Models";
 
 const ListOfImagesDiv = styled.div`
   display: grid;
@@ -12,12 +13,12 @@ const ListOfImagesDiv = styled.div`
 export function ListOfImages({
   images,
 }: {
-  images: [{ url: string; title: string }] | never[];
+  images: Images[];
 }): React.ReactElement {
   return (
     <ListOfImagesDiv>
-      {images.map((image) => {
-        return <Image key={image.url} {...image} />;
+      {images.map((image, index) => {
+        return <Image key={`image.url${index}`} {...image} />;
       })}
     </ListOfImagesDiv>
   );

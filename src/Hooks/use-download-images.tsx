@@ -1,28 +1,39 @@
+import { Images } from "Models";
 import React from "react";
 import { useState } from "react";
 import useConfigContext from "./use-config-context";
 
-export function useDownloadImages({ tag }: { tag?: string }) {
-  const [images, setImages] = useState([]);
+export function useDownloadImages({
+  tag,
+  page = 1,
+}: {
+  tag?: string;
+  page?: number;
+}) {
+  const [images, setImages] = useState<Array<Images>>([]);
 
   const { apiKey, urlImages, perPage } = useConfigContext();
 
   const [loading, setLoading] = useState(false);
 
   React.useEffect(() => {
+    setImages([]);
+  }, [tag]);
+
+  React.useEffect(() => {
     setLoading(true);
 
     const fecthImages = async () => {
-      const respone = await fetch(
-        `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tag}&per_page=${perPage}&format=json&nojsoncallback=1`
-      );
-
-      const responseJson = await respone.json();
-
       try {
+        const respone = await fetch(
+          `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tag}&per_page=${perPage}&page=${page}&format=json&nojsoncallback=1`
+        );
+
+        const responseJson = await respone.json();
+
         const { photo: infoImages } = responseJson.photos;
 
-        const images = infoImages.map((infoImage: any) => {
+        const imagesApi = infoImages.map((infoImage: any) => {
           return {
             url: urlImages
               .replace("{server-id}", infoImage.server)
@@ -33,14 +44,14 @@ export function useDownloadImages({ tag }: { tag?: string }) {
           };
         });
 
-        setImages(images);
+        setImages((currentImages) => [...currentImages, ...imagesApi]);
       } finally {
         setLoading(false);
       }
     };
 
     fecthImages();
-  }, [tag, apiKey, perPage, urlImages]);
+  }, [tag, apiKey, perPage, urlImages, page]);
 
   return { images, loading };
 }
