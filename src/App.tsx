@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom"
-import { Div, Header, HotTags } from "Components"
-import { Home, ResultImages } from "Pages"
+import { Div, Header, LazyHotTags } from "./Components"
+import { Home, ResultImages } from "./Pages"
 
 
 function App(): React.ReactElement {
@@ -14,7 +14,7 @@ function App(): React.ReactElement {
         <Route path="/search/:tagUrl" element={<ResultImages />} />
       </Routes>
 
-      <HotTags />
+      <LazyHotTags />
     </Div>
   )
 }

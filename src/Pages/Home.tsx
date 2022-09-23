@@ -1,7 +1,6 @@
 import React from "react";
-import { useTranslateContext } from "Hooks";
+import { useTranslateContext, useConfigContext } from "../Context";
 import { ResultImages } from "./ResultImages";
-import useConfigContext from "Hooks/use-config-context";
 
 export function Home(): React.ReactElement {
   const { description } = useTranslateContext();

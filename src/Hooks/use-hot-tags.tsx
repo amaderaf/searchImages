@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import useConfigContext from "./use-config-context";
+import { useConfigContext } from "../Context";
 
 export function useHotTags() {
   const [tags, setTags] = useState<Array<string>>([]);

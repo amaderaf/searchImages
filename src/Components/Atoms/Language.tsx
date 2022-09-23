@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useChangeTranslateContext } from "Hooks";
+import { useChangeTranslateContext } from "../../Context";
 
 const  ButtonLang = styled.button`
   background-color: transparent;
@@ -14,7 +14,7 @@ export function Language(): React.ReactElement {
 
   return (
     <>
-      <ButtonLang onClick={()=>setLang("Sp")}>SP</ButtonLang>|<ButtonLang onClick={()=>setLang("En")}>EN</ButtonLang>
+      <ButtonLang onClick={()=>setLang("Sp")}>🇪🇸</ButtonLang>|<ButtonLang onClick={()=>setLang("En")}>🇺🇸</ButtonLang>
     </>
   );
 }

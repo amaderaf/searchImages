@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+import { Children } from "../Types";
 
 type Language = {
     title: string
@@ -36,16 +37,14 @@ const textsLang: Record<string, Language> = {
   },
 };
 
-export const TranslateContext = createContext({
+const TranslateContext = createContext({
   texts: textsLang.Sp,
   setLang: (lang: string) => {},
 });
 
 export const TranslateContextProvider = ({
   children,
-}: {
-  children: React.ReactNode;
-}): React.ReactElement => {
+}: Children): React.ReactElement => {
   const [lang, setLang] = useState("En");
 
   const texts = textsLang[lang];
@@ -57,4 +56,12 @@ export const TranslateContextProvider = ({
       {children}
     </TranslateContext.Provider>
   );
+};
+
+export const useTranslateContext = () => {
+  return useContext(TranslateContext).texts;
+};
+
+export const useChangeTranslateContext = () => {
+  return useContext(TranslateContext).setLang;
 };

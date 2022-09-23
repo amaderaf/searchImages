@@ -1,7 +1,7 @@
-import { Images } from "Models";
+import { Images } from "../Types";
 import React from "react";
 import { useState } from "react";
-import useConfigContext from "./use-config-context";
+import { useConfigContext } from "../Context";
 
 export function useDownloadImages({
   tag,

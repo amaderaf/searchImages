@@ -1,8 +1,9 @@
-import { Div, ListOfButtons } from "Components";
-import { useHotTags, useTranslateContext } from "Hooks";
+import { useHotTags } from "../../Hooks";
+import { useTranslateContext } from "../../Context";
 import { useNavigate } from "react-router-dom";
+import { Div, ListOfButtons, Loading } from "../../Components";
 
-export function HotTags() {
+export default function HotTags() {
   const { tags, loading } = useHotTags();
 
   const navigate = useNavigate();
@@ -14,9 +15,18 @@ export function HotTags() {
   };
 
   return (
-    <Div width="80%" m="0 auto" mb="20px">
-      <h2>{hotTags}</h2>
-      <ListOfButtons buttonsText={tags} handleButton={handleButtonHotTags} />
-    </Div>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Div width="80%" m="0 auto" mb="20px">
+          <h2>{hotTags}</h2>
+          <ListOfButtons
+            buttonsText={tags}
+            handleButton={handleButtonHotTags}
+          />
+        </Div>
+      )}
+    </>
   );
 }

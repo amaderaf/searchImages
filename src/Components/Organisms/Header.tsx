@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { useTranslateContext } from "Hooks";
+import { useTranslateContext } from "../../Context";
 import {
   Button,
   InputText,
@@ -10,7 +10,7 @@ import {
   ListOfButtons,
   Div,
   Flex,
-} from "Components";
+} from "../../Components";
 
 const Form = styled.form`
   width: 100%;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Image } from "Components";
-import { Images } from "Models";
+import { Image } from "../../Components";
+import { Images } from "../../Types";
 
 const ListOfImagesDiv = styled.div`
   display: grid;
